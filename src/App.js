@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
+import './styles.scss';
+// import Login from './../src/Screen/Account/Login';
+// import Product from './../src/Screen/Product/Product';
+// import Home from './Screen/Home/Home';
+// import Profile from './Screen/Account/Profile';
+// import Details from './Screen/Product/Details';
+// import { useState } from 'react';
+// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Header from './Screen/Header/Header';
+import { AppProvider } from './Context/AppContext';
+// import Cart from './Screen/Cart/Cart';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AppProvider>
+        <Header />
+      </AppProvider>
     </div>
   );
 }

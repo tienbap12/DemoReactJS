@@ -1,0 +1,23 @@
+import React, { createContext, useEffect, useReducer } from 'react';
+import { AppProvider, initializer } from '../Context/AppContext.js';
+
+export const CartContext = createContext();
+
+export const CartProvider = ({ children }) => {
+  const [cart, dp] = useReducer(AppProvider, [], initializer);
+
+  useEffect(() => {
+    localStorage.setItem('localCart', JSON.stringify(cart));
+  }, [cart]);
+
+  return (
+    <CartContext.Provider
+      value={{
+        cart,
+        dp,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+};
